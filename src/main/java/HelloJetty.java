@@ -43,6 +43,10 @@ public class HelloJetty extends AbstractHandler {
 			// Inform jetty that this request has now been handled
 			baseRequest.setHandled(true);
 		}
+		else
+		{
+			
+		}
 
 	}
 

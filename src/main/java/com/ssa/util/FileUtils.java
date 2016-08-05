@@ -13,7 +13,7 @@ import java.io.IOException;
 public class FileUtils {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		String fileName ="c:\\temp\\test.html";
 		
 		String fileNameNew ="c:\\temp\\testNew.html";
