@@ -1,4 +1,5 @@
-package com.ssa.util;
+package main.java.com.ssa.util;
+
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
