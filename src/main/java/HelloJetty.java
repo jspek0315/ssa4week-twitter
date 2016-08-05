@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Request;
@@ -22,7 +23,11 @@ public class HelloJetty extends AbstractHandler {
 			HttpServletRequest request, HttpServletResponse response)
 
 			throws IOException, ServletException {
-		if (target.equals("/")) {
+		if (target.equals("MsgBox")) 
+		{
+			JOptionPane.showMessageDialog(null, "Blah", "InfoBox: " , JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if (target.equals("/")){
 			System.out.println("target: " + target);
 			// Declare response encoding and types
 			

@@ -6,25 +6,27 @@
     <link rel="stylesheet" type="text/css" href="/webapp/msgStyles.css">
 </head>
 <body>
-    <h1>Welcome To Twitter Clone</h1>
+    <form action="MsgBox">
     
-    <div >
-        <h2 id="userID">User Name Holder</h2>
-        <img src="/resources/defaultPic.jpg"/>
-    </div>
-    
-    <div>
-        <p>Please type your tweet in the textbox below</p>
-        <textarea rows="4" cols="50" id="textBoxID"> Please Enter Tweet Here. </textarea>
-        <br>
-        <button type="button" >Insert Tweet</button>
-    </div>
-    
-    <div class="outputClass">
+        <h1>Welcome To Twitter Clone</h1>
         
-    </div>
-
+        <div >
+            <h2 id="userID">User Name Holder</h2>
+            <img src="/resources/defaultPic.jpg"/>
+        </div>
+        
+        <div>
+            <p>Please type your tweet in the textbox below</p>
+            <textarea rows="4" cols="50" id="textBoxID"> Please Enter Tweet Here. </textarea>
+            <br>
+            <button type="button" onclick="addTweet()">Insert Tweet</button>
+        </div>
+        
+        <div class="outputClass">
+            
+        </div>
+    </form>
     
 </body>
-<script src="msgJS.js"></script>
+<script src="/webapp/msgJS.js"></script>
 </html>
