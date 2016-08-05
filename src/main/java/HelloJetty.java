@@ -32,7 +32,7 @@ public class HelloJetty extends AbstractHandler {
 			response.setStatus(HttpServletResponse.SC_OK);
 
 			// Write back response
-			String fName = "C://Users//admin//workspace//ssa4week-twitter//src//main//webapp//msg.html";
+			String fName = ".//src//main//webapp//msg.html";
 			response.getWriter().println(FileUtils.readFile(fName));
 
 			// Inform jetty that this request has now been handled
