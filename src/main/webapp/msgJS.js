@@ -1,6 +1,7 @@
 /**
  * 
  */
+
 var baseURL = "http://localhost:8080"
 function addTweet()
 {
@@ -19,7 +20,7 @@ function updateHTML()
 //	var userID = getUserID();
 //	//Create URL 
 //	var requestURL = generateURL(userID);
-	var requestURL = baseURL + "/src/main/resources/JSON_File1.txt";
+	var requestURL = baseURL + "/resources/JSON_File1.txt";
 	
 	alert("Entered updateHTML");
 	
@@ -31,7 +32,7 @@ function updateHTML()
 		var msg2 = "Ready State: " + xhttp.readyState;
 		msg2 += "\nStatus : " + xhttp.status;
 		alert(msg2);
-		if (xhttp.readyState === 4 ) //&& xhttp.status == 200) 
+		if (xhttp.readyState === 4 && xhttp.status == 200) 
 		{
 		    var txtJSON = xhttp.responseText;
 		    writeTextToHTML(txtJSON);
@@ -52,13 +53,12 @@ function writeTextToHTML(txtJSON)
 	//Remove Old Images 
 	removePosts();
 	
-	alert("Entering Write Loop");
 	
 	//Loop through jsObj
 	for(var i=0; i < jsObj.Message_List.length; i++)
 	{
-		var msg = jsObj.Message_List[i].msg;
-		
+		var msg = jsObj.Message_List[i];
+		  
 		//Create image element
 		var paragraphNode = document.createElement("p");
 		paragraphNode.innerHTML = msg;
@@ -79,3 +79,11 @@ function removePosts()
 		list.removeChild(list.firstChild);
 	}
 }
+
+$(document).ready(
+		function()
+		{
+			updateHTML();
+		}
+		
+);

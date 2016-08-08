@@ -77,7 +77,7 @@ public class HelloJetty extends AbstractHandler {
 	            JSONObject jsonObject = (JSONObject) obj;
 	            JSONArray messageList = (JSONArray) jsonObject.get("Message_List");
 	            for (Object object : messageList) {
-	            	newMsg.add(object.toString().substring(4).trim());
+	            	newMsg.add(object.toString().trim());
 				}
 	        }
 	        catch(Exception e)
@@ -105,10 +105,11 @@ public class HelloJetty extends AbstractHandler {
 		}
 		else
 		{
-			response.setContentType("text/html; charset=utf-8");
+			System.out.println("Calling Else Statement");
+			//response.setContentType("text/html; charset=utf-8");
 
 			// Declare response status code
-			response.setStatus(HttpServletResponse.SC_OK);
+			//response.setStatus(HttpServletResponse.SC_OK);
 
 			// Write back response
 			//String fName = ".//src//main//webapp//msg.html";
@@ -127,7 +128,7 @@ public class HelloJetty extends AbstractHandler {
 
 		JSONArray msgList = new JSONArray();
 		for (String msg : newMsgList) {
-			msgList.add("Msg:" + msg);
+			msgList.add(msg);
 
 		}
 		obj.put("Message_List", msgList);
@@ -158,8 +159,8 @@ public class HelloJetty extends AbstractHandler {
 		resource_handler.setResourceBase("./src/main/");
 
 		HandlerList handlers = new HandlerList();
-
-		handlers.setHandlers(new Handler[]{new HelloJetty(), resource_handler});
+//http://localhost:8080/resources/
+		handlers.setHandlers(new Handler[]{new HelloJetty(),resource_handler});
 		server.setHandler(handlers);
 		// server.setHandler(resource_handler);
 
